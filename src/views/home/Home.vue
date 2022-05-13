@@ -2,7 +2,7 @@
  * @Author: LYM
  * @Date: 2022-04-12 20:01:54
  * @LastEditors: LYM
- * @LastEditTime: 2022-05-13 20:40:26
+ * @LastEditTime: 2022-05-13 20:43:22
  * @Description: Home
 -->
 <template>
@@ -12,7 +12,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const home = ref('page')
+const home = ref("page")
 </script>
 
 <style lang="scss" scoped>
