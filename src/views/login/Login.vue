@@ -2,14 +2,11 @@
  * @Author: LYM
  * @Date: 2022-04-12 11:12:09
  * @LastEditors: LYM
- * @LastEditTime: 2022-04-12 17:55:09
+ * @LastEditTime: 2022-05-13 08:32:59
  * @Description: Login
 -->
 <template>
   <div class="login-wrap">
-    <div class="login-log">
-      <img src="../../assets/logo.png" alt="" />
-    </div>
     <div class="login-user">用户名:{{ indexStore.name }}</div>
     <div class="login-btn">
       <n-button dashed type="primary" @click="updateName">身份切换</n-button>
