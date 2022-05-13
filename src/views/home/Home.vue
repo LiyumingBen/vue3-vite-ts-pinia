@@ -2,11 +2,11 @@
  * @Author: LYM
  * @Date: 2022-04-12 20:01:54
  * @LastEditors: LYM
- * @LastEditTime: 2022-04-12 20:06:29
+ * @LastEditTime: 2022-05-13 20:40:26
  * @Description: Home
 -->
 <template>
-  <div class="home-wrap">home-{{ home }}</div>
+  <div class="home-wrap">home-{{ home }}-pinia</div>
 </template>
 
 <script setup lang="ts">
