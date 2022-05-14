@@ -2,7 +2,7 @@
  * @Author: LYM
  * @Date: 2022-04-12 11:12:09
  * @LastEditors: LYM
- * @LastEditTime: 2022-04-12 20:39:03
+ * @LastEditTime: 2022-05-14 11:04:59
  * @Description: vite配置
  */
 import { defineConfig } from 'vite'
@@ -63,8 +63,8 @@ export default defineConfig({
     cssCodeSplit: false,
     terserOptions: {
       compress: {
-        drop_console: true,
-        drop_debugger: true,
+        drop_console: process.env.NODE_ENV !== 'production',
+        drop_debugger: process.env.NODE_ENV !== 'production',
       },
     },
   },

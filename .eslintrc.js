@@ -39,9 +39,9 @@ module.exports = {
     'no-var': 'error',
     'prettier/prettier': 'error',
     // 禁止出现console
-    'no-console': 'warn',
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     // 禁用debugger
-    'no-debugger': 'warn',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     // 禁止出现重复的 case 标签
     'no-duplicate-case': 'warn',
     // 禁止出现空语句块
@@ -146,6 +146,14 @@ module.exports = {
     'no-case-declarations': 'warn',
     'no-async-promise-executor': 'warn',
   },
+  overrides: [
+    {
+      files: ['src/views/index.vue', 'src/views/**/index.vue'], // 匹配views和二级目录中的index.vue
+      rules: {
+        'vue/multi-word-component-names': 'off',
+      }, //给上面匹配的文件指定规则
+    },
+  ],
   globals: {
     defineProps: 'readonly',
     defineEmits: 'readonly',
