@@ -50,9 +50,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json}": [
-      "prettier --write",
-      "eslint",
-      "git add"
+      "yarn lint",
+      "prettier --write"
     ]
   }
 }

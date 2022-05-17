@@ -2,7 +2,7 @@
  * @Author: LYM
  * @Date: 2022-04-12 11:12:09
  * @LastEditors: LYM
- * @LastEditTime: 2022-05-14 11:04:59
+ * @LastEditTime: 2022-05-17 13:40:52
  * @Description: vite配置
  */
 import { defineConfig } from 'vite'
@@ -39,6 +39,20 @@ export default defineConfig({
         charset: false, // 去掉打包警告 warning: "@charset" must be the first rule in the file
       },
     },
+    postcss: {
+      plugins: [
+        {
+          postcssPlugin: 'internal:charset-removal',
+          AtRule: {
+            charset: (atRule) => {
+              if (atRule.name === 'charset') {
+                atRule.remove()
+              }
+            },
+          },
+        },
+      ],
+    },
   },
   //启动服务配置
   server: {
@@ -61,11 +75,9 @@ export default defineConfig({
       },
     },
     cssCodeSplit: false,
-    terserOptions: {
-      compress: {
-        drop_console: process.env.NODE_ENV !== 'production',
-        drop_debugger: process.env.NODE_ENV !== 'production',
-      },
-    },
+  },
+  //去除 console debugger
+  esbuild: {
+    drop: ['debugger', 'console'],
   },
 })
